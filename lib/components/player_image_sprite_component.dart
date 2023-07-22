@@ -5,7 +5,8 @@ import 'dart:ui';
 
 import 'package:flutter/services.dart';
 
-class PlayerImageSpriteComponent extends SpriteComponent with KeyboardHandler {
+class PlayerImageSpriteComponent extends SpriteComponent
+    with KeyboardHandler, HasGameRef {
   late double screenWidth, screenHeight, centerX, centerY;
   final double spriteWidth = 512.0, spriteHeight = 512.0;
 
@@ -13,8 +14,8 @@ class PlayerImageSpriteComponent extends SpriteComponent with KeyboardHandler {
   Future<void>? onLoad() async {
     sprite = await Sprite.load('tiger.png');
 
-    screenWidth = MediaQueryData.fromWindow(window).size.width;
-    screenHeight = MediaQueryData.fromWindow(window).size.height;
+    screenWidth = gameRef.size.x;
+    screenHeight = gameRef.size.y;
 
     size = Vector2(spriteWidth, spriteHeight);
 

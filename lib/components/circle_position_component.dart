@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flame/components.dart';
 
 class CirclePositionComponent extends PositionComponent
-    with CollisionCallbacks {
+    with CollisionCallbacks, HasGameRef {
   CirclePositionComponent({this.countActive = false});
 
   static const int circleSpeed = 500;
@@ -35,8 +35,8 @@ class CirclePositionComponent extends PositionComponent
 
   @override
   void onLoad() {
-    screenWidth = MediaQueryData.fromWindow(window).size.width;
-    screenHeight = MediaQueryData.fromWindow(window).size.height;
+    screenWidth = gameRef.size.x;
+    screenHeight = gameRef.size.y;
 
     circleDirectionX = random.nextInt(2) == 1 ? 1 : -1;
     circleDirectionY = random.nextInt(2) == 1 ? 1 : -1;
@@ -57,8 +57,7 @@ class CirclePositionComponent extends PositionComponent
         // top
         circleDirectionX = random.nextInt(2) == 1 ? 1 : -1;
         circleDirectionY *= -1;
-      } else if (points.first[1] >=
-          MediaQueryData.fromWindow(window).size.height) {
+      } else if (points.first[1] >= gameRef.size.y) {
         // bottom
         circleDirectionX = random.nextInt(2) == 1 ? 1 : -1;
         circleDirectionY *= -1;
@@ -66,8 +65,7 @@ class CirclePositionComponent extends PositionComponent
         // left
         circleDirectionX *= -1;
         circleDirectionY = random.nextInt(2) == 1 ? 1 : -1;
-      } else if (points.first[0] >=
-          MediaQueryData.fromWindow(window).size.width) {
+      } else if (points.first[0] >= gameRef.size.x) {
         // right
         circleDirectionX *= -1;
         circleDirectionY = random.nextInt(2) == 1 ? 1 : -1;

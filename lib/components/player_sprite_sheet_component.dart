@@ -12,7 +12,7 @@ import 'dart:ui';
 import 'package:flutter/services.dart';
 
 class PlayerSpriteSheetComponent extends SpriteAnimationComponent
-    with TapCallbacks, KeyboardHandler, CollisionCallbacks {
+    with TapCallbacks, KeyboardHandler, CollisionCallbacks, HasGameRef {
   late double screenWidth, screenHeight, centerX, centerY;
   final double spriteSheetWidth = 680, spriteSheetHeight = 472;
   int posX = 0, posY = 0;
@@ -59,8 +59,8 @@ class PlayerSpriteSheetComponent extends SpriteAnimationComponent
 
     //animation = spriteSheet.createAnimationByLimit(xInit: 0, yInit: 0, step: 7, sizeX: 2, stepTime: .08);
 
-    screenWidth = MediaQueryData.fromWindow(window).size.width;
-    screenHeight = MediaQueryData.fromWindow(window).size.height;
+    screenWidth = gameRef.size.x;
+    screenHeight = gameRef.size.y;
 
     size = Vector2(spriteSheetWidth / 4, spriteSheetHeight / 4);
 
