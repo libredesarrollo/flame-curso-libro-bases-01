@@ -34,7 +34,7 @@ class CirclePositionComponent extends PositionComponent
   }
 
   @override
-  Future<void>? onLoad() {
+  void onLoad() {
     screenWidth = MediaQueryData.fromWindow(window).size.width;
     screenHeight = MediaQueryData.fromWindow(window).size.height;
 
@@ -48,8 +48,6 @@ class CirclePositionComponent extends PositionComponent
     hitbox.renderShape = true;
 
     add(hitbox);
-
-    return super.onLoad();
   }
 
   @override

@@ -1,4 +1,5 @@
 import 'package:flame/collisions.dart';
+import 'package:flame/events.dart';
 import 'package:flame/input.dart';
 import 'package:flame/sprite.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,7 @@ import 'dart:ui';
 import 'package:flutter/services.dart';
 
 class PlayerSpriteSheetComponent extends SpriteAnimationComponent
-    with Tappable, KeyboardHandler, CollisionCallbacks {
+    with TapCallbacks, KeyboardHandler, CollisionCallbacks {
   late double screenWidth, screenHeight, centerX, centerY;
   final double spriteSheetWidth = 680, spriteSheetHeight = 472;
   int posX = 0, posY = 0;
@@ -76,7 +77,7 @@ class PlayerSpriteSheetComponent extends SpriteAnimationComponent
   }
 
   @override
-  bool onTapDown(TapDownInfo info) {
+  void onTapDown(TapDownEvent event) {
     // animationIndex++;
     // if (animationIndex > 4) {
     //   animationIndex = 0;
@@ -99,10 +100,6 @@ class PlayerSpriteSheetComponent extends SpriteAnimationComponent
     //   default:
     //     animation = dinoDeadAnimation;
     // }
-
-    super.onTapDown(info);
-
-    return true;
   }
 
   // @override

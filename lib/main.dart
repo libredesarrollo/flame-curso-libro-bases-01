@@ -1,15 +1,24 @@
 import 'package:flame/collisions.dart';
+import 'package:flame/events.dart';
 import 'package:flame/game.dart';
-import 'package:flame/input.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pruebasflame/components/circle_position_component.dart';
 import 'package:pruebasflame/components/player_image_sprite_component.dart';
 import 'package:pruebasflame/components/player_sprite_sheet_component.dart';
 
-class MyGame extends FlameGame with KeyboardEvents, /*TapDetector */ HasTappables,HasKeyboardHandlerComponents, HasCollisionDetection {
+class MyGame extends FlameGame
+    with
+        KeyboardEvents,
+        /*TapDetector 
+        HasTappables, Deprecated
+        */
+
+        HasKeyboardHandlerComponents,
+        HasCollisionDetection {
   @override
-  Future<void>? onLoad() {
+  void onLoad() {
     // add(PlayerImageSpriteComponent());
     //add(PlayerSpriteSheetComponent());
 
@@ -19,8 +28,6 @@ class MyGame extends FlameGame with KeyboardEvents, /*TapDetector */ HasTappable
     // add(CirclePositionComponent(countActive: true));
     add(PlayerSpriteSheetComponent());
     add(ScreenHitbox());
-
-    return super.onLoad();
   }
 
   // @override
@@ -33,7 +40,7 @@ class MyGame extends FlameGame with KeyboardEvents, /*TapDetector */ HasTappable
 
   // @override
   // void onTapDown(TapDownInfo info) {
-    
+
   //   print(info);
 
   //   super.onTapDown(info);
@@ -44,8 +51,6 @@ class MyGame extends FlameGame with KeyboardEvents, /*TapDetector */ HasTappable
   //    print(info);
   //   super.onTapUp(info);
   // }
-
-
 }
 
 void main(List<String> args) {

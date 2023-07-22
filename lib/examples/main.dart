@@ -5,16 +5,13 @@ import 'package:flutter/material.dart';
 
 import 'package:flame/components.dart';
 
-
-class MySprite extends SpriteComponent{
-
+class MySprite extends SpriteComponent {
   double spritePos = 10;
 
   MySprite() : super(size: Vector2.all(150));
 
   @override
   Future<void>? onLoad() async {
-    
     sprite = await Sprite.load('tiger.png');
     // size =
 
@@ -24,26 +21,20 @@ class MySprite extends SpriteComponent{
   @override
   void update(double dt) {
     spritePos++;
-    
+
     position = Vector2(spritePos, spritePos);
 
     super.update(dt);
   }
-
 }
 
-class MyGame extends FlameGame{
-
-@override
-  Future<void>? onLoad() {
-    
+class MyGame extends FlameGame {
+  @override
+  void onLoad() {
     add(MySprite());
-
-    return super.onLoad();
   }
 }
 
 void main() {
-  runApp( GameWidget(game: MyGame()) );
+  runApp(GameWidget(game: MyGame()));
 }
-

@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 class MyCirle extends PositionComponent {
   MyCirle() : super();
 
-    double circlePos = 10;
+  double circlePos = 10;
 
   // @override
   // Future<void>? onLoad() {
@@ -17,10 +17,10 @@ class MyCirle extends PositionComponent {
 
   @override
   void render(Canvas canvas) {
-    canvas.drawCircle(Offset(circlePos, circlePos), 10, BasicPalette.red.paint());
+    canvas.drawCircle(
+        Offset(circlePos, circlePos), 10, BasicPalette.red.paint());
     // canvas.drawRect(Rect.fromCircle(center: const Offset(100, 100), radius: 50.0),BasicPalette.brown.paint());
     //canvas.drawRect(Rect.fromPoints(const Offset(10,10), const Offset(500,500)), BasicPalette.purple.paint());
-    
 
     super.render(canvas);
   }
@@ -30,14 +30,12 @@ class MyCirle extends PositionComponent {
     circlePos++;
     super.update(dt);
   }
-  
 }
 
 class MyGame extends FlameGame {
   @override
-  Future<void>? onLoad() {
+  void onLoad() {
     add(MyCirle());
-    return super.onLoad();
   }
 }
 
