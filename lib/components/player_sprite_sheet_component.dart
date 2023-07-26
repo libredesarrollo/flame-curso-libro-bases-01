@@ -76,6 +76,19 @@ class PlayerSpriteSheetComponent extends SpriteAnimationComponent
     return super.onLoad();
   }
 
+  // @override
+  // bool onTapUp(TapUpInfo info) {
+  //   print(info);
+  //   super.onTapUp(info);
+  //   return true;
+  // }
+
+  @override
+  void onTapUp(TapUpEvent event) {
+    // TODO: implement onTapUp
+    super.onTapUp(event);
+  }
+
   @override
   void onTapDown(TapDownEvent event) {
     // animationIndex++;
@@ -100,14 +113,8 @@ class PlayerSpriteSheetComponent extends SpriteAnimationComponent
     //   default:
     //     animation = dinoDeadAnimation;
     // }
+    super.onTapDown(event);
   }
-
-  // @override
-  // bool onTapUp(TapUpInfo info) {
-  //   print(info);
-  //   super.onTapUp(info);
-  //   return true;
-  // }
 
   @override
   bool onKeyEvent(RawKeyEvent event, Set<LogicalKeyboardKey> keysPressed) {

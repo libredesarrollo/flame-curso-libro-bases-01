@@ -10,13 +10,28 @@ import 'package:pruebasflame/components/player_sprite_sheet_component.dart';
 
 class MyGame extends FlameGame
     with
+        TapDetector,
+        TapDetector,
         KeyboardEvents,
+        TapDetector,
         /*TapDetector 
         HasTappables, Deprecated
         */
 
         HasKeyboardHandlerComponents,
         HasCollisionDetection {
+//  @override
+//   void onTapDown(TapDownInfo info) {
+//     print("Player tap down on ${info.eventPosition.game}");
+//     super.onTapDown(info);
+//   }
+
+//   @override
+//   void onTapUp(TapUpInfo info) {
+//     print("Player tap up on ${info.eventPosition.game}");
+//     super.onTapUp(info);
+//   }
+
   @override
   void onLoad() {
     // add(PlayerImageSpriteComponent());
