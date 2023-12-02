@@ -1,8 +1,6 @@
 import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
 
-import 'dart:ui';
-
 import 'package:flutter/services.dart';
 
 class PlayerImageSpriteComponent extends SpriteComponent

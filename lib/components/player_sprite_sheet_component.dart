@@ -7,8 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/components.dart';
 
-import 'dart:ui';
-
 import 'package:flutter/services.dart';
 
 class PlayerSpriteSheetComponent extends SpriteAnimationComponent
