@@ -3,9 +3,6 @@ import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:pruebasflame/components/circle_position_component.dart';
-import 'package:pruebasflame/components/player_image_sprite_component.dart';
 import 'package:pruebasflame/components/player_sprite_sheet_component.dart';
 
 class MyGame extends FlameGame
