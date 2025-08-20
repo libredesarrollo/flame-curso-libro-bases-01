@@ -4,8 +4,9 @@
 
 Plantilla inicial de Flutter configurada con el motor de juegos **Flame**, como punto de partida para el curso/libro:
 
-https://www.desarrollolibre.net/libros/flutter-flame-desarrollo-de-juegos-en-2d
-https://www.desarrollolibre.net/blog/flutter/flame-desarrollo-de-juegos-en-2d-con-flutter
+[https://www.desarrollolibre.net/libros/flutter-flame-desarrollo-de-juegos-en-2d
+https://www.desarrollolibre.net/blog/flutter/flame-desarrollo-de-juegos-en-2d-con-flutter](https://www.desarrollolibre.net/blog/flutter/flame-desarrollo-de-juegos-en-2d-con-flutter
+https://www.desarrollolibre.net/libros/flutter-flame-desarrollo-de-juegos-en-2d)
 
 ---
 
